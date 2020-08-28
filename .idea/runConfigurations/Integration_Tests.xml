@@ -1,0 +1,10 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="Integration Tests" type="SbtRunConfiguration" factoryName="sbt Task">
+    <setting name="tasks" value="it:test" />
+    <setting name="vmparams" value="-Xms512M -Xmx1024M -Xss1M -XX:+CMSClassUnloadingEnabled" />
+    <setting name="workingDir" value="$PROJECT_DIR$" />
+    <method>
+      <option name="RunConfigurationTask" enabled="true" run_configuration_name="Clean Temp Directory" run_configuration_type="SbtRunConfiguration" />
+    </method>
+  </configuration>
+</component>
