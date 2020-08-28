@@ -1,6 +1,7 @@
-.idea
+/.idea
 /test-output/
 /temp/
 /metastore_db/
 /project/target/
 /target/
+!/.idea/runConfigurations/
