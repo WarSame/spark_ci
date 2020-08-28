@@ -58,3 +58,8 @@ unmanagedSourceDirectories in Test := baseDirectory { base =>
 
 parallelExecution in IntegrationTest := true
 parallelExecution in Test := true
+
+//Remove temp directory through "sbt clean"
+//Useful because otherwise the temp directory ends up with thousands of directories
+//Which can slow performance
+cleanFiles += baseDirectory.value / "temp"

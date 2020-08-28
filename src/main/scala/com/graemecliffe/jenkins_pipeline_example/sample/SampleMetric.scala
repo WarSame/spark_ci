@@ -15,6 +15,8 @@ class SampleMetric()(implicit spark: SparkSession, processor: DataProcessor, uti
 
   override def metricTableName: String = "main.dates"
 
+  //Basic Dataframe getter
+  //There is no Driver in this project, but you can return the DF to your existing Driver
   override def getDf: DataFrame = {
     processor.table(metricTableName)
   }
