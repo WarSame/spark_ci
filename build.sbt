@@ -12,7 +12,7 @@ lazy val root = (project in file("."))
     testOptions in IntegrationTest := Seq(
       Tests.Filter(integrationTestFilter)
     ),
-    name := "com.graemecliffe.jenkins_pipeline_example.sample.Sample",
+    name := "spark_ci",
     version := "1.0",
     dependencyClasspath in IntegrationTest := (dependencyClasspath in IntegrationTest).value
       ++ (exportedProducts in Test).value
