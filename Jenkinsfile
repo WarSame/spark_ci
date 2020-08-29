@@ -1,8 +1,6 @@
 pipeline {
-    agent none
     stages {
         stage('Build') {
-            agent { label "windows" }
             steps {
                 // Testing the commit hook
                 sbt command: "clean compile assembly"
@@ -13,7 +11,6 @@ pipeline {
             environment {
                 HADOOP_HOME = "C:\\HadoopResources\\Hadoop\\"
             }
-            agent{ label "windows" }
             steps {
                 //Create hadoop winutils folder structure
                 powershell "md -Force ${env.HADOOP_HOME}bin"
