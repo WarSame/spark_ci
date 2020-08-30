@@ -52,8 +52,8 @@ class DfValidator(timestampIn: String = "2020-04-28T12:00:00.000Z") extends Mock
 
   def checkCounts(
                    df: DataFrame,
-                   weekCount: Option[Long],
-                   monthCount: Option[Long]
+                   catCount: Option[Long],
+                   dogCount: Option[Long]
                  ): Unit = {
     val sortedColumns: Array[String] = df.columns.sorted
     val persistedDf = df.select(sortedColumns.head, sortedColumns.tail: _*).persist()
@@ -68,7 +68,7 @@ class DfValidator(timestampIn: String = "2020-04-28T12:00:00.000Z") extends Mock
     val groupedDf = persistedDf.groupBy("animal_type").count
     groupedDf.show()
 
-    weekCount match {
+    catCount match {
       case Some(x) =>
         assertResult(x) {
           groupedDf
@@ -79,7 +79,7 @@ class DfValidator(timestampIn: String = "2020-04-28T12:00:00.000Z") extends Mock
         }
       case None =>
     }
-    monthCount match {
+    dogCount match {
       case Some(x) => assertResult(x){
         groupedDf
           .where(col("animal_type") === "dog")
