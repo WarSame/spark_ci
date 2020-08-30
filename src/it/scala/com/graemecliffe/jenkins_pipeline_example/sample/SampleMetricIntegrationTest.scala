@@ -22,5 +22,6 @@ class SampleMetricIntegrationTest extends FlatSpec with MockFactory {
     )
 
     utils.checkCounts(df, Some(2), Some(3))
+    df.unpersist
   }
 }
