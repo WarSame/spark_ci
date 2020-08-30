@@ -97,11 +97,9 @@ class DfValidator(timestampIn: String = "2020-04-28T12:00:00.000Z") extends Mock
   //Since we don't want to constantly update sample data but time marches forward
   //If we are looking at the previous 3 weeks, the sample data would quickly be useless
   //This allows us to always look at the same 3 weeks
-  def getUtil()(implicit processor: DataProcessor): ProjectUtil = {
+  def getUtil: ProjectUtil = {
     new ProjectUtil(now)
   }
-
-  lazy val getDefaultProcessor: DataProcessor = new SparkDataProcessor
 
   //Write DF out to output directory if validation of data is wanted
   //Also verifies writing out works
