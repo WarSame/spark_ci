@@ -10,6 +10,8 @@ import com.graemecliffe.jenkins_pipeline_example.common.util.SharedSparkSession.
 
 class DfValidator(timestampIn: String = "2020-04-28T12:00:00.000Z") extends MockFactory  {
 
+  //Check that the schema we pass in as requiredFields
+  //Matches the schema that the test result value df actually has
   def checkSchema(
                    df: DataFrame,
                    requiredFields: Seq[String]
@@ -50,6 +52,8 @@ class DfValidator(timestampIn: String = "2020-04-28T12:00:00.000Z") extends Mock
     }
   }
 
+  //Check that the values passed in as catCount and dogCount
+  //Match the row counts we actually have in the test result value df
   def checkCounts(
                    df: DataFrame,
                    catCount: Option[Long],
@@ -91,6 +95,9 @@ class DfValidator(timestampIn: String = "2020-04-28T12:00:00.000Z") extends Mock
     }
   }
 
+  //Timestamp for the current time
+  //By default this is the time the job in the real world
+  //This can be override so that historical data can be used
   val now: Column = lit(Timestamp.from(Instant.parse(timestampIn)))
 
   //Mock util which uses data at a certain point in time

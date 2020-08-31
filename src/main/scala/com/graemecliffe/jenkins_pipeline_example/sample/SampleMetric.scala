@@ -17,8 +17,9 @@ class SampleMetric()(implicit spark: SparkSession, util: ProjectUtil)
 
   //Basic Dataframe getter
   //There is no Driver in this project, but you can return the DF to your existing Driver
+  //This is called in your test to get a sample DataFrame back as a result
   override def getDf: DataFrame = {
-    spark.table(metricTableName)
+    util.getSampleDataFrame
   }
 
 }

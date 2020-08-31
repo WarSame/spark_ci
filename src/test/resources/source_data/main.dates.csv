@@ -1,9 +1,9 @@
 date_time,animal_type,colour
-2020-03-04 00:00:00,dog,white
-2020-03-04 00:00:00,horse,white
-2020-03-04 00:00:00,cat,white
-2020-03-04 00:00:00,dog,black
-2020-03-04 00:00:00,horse,black
-2020-03-04 00:00:00,cat,black
-2020-03-04 00:00:00,dog,red
-2020-03-04 00:00:00,horse,red
+2020-04-28T12:00:00.000Z,dog,white
+2020-04-28T12:00:00.000Z,horse,white
+2020-04-28T12:00:00.000Z,cat,white
+2020-04-28T12:00:00.000Z,dog,black
+2020-04-28T12:00:00.000Z,horse,black
+2020-04-28T12:00:00.000Z,cat,black
+2020-04-28T12:00:00.000Z,dog,red
+2020-04-28T12:00:00.000Z,horse,red
